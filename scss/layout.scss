@@ -84,6 +84,20 @@ a {
     p {
       font-size: 24px;
       font-weight: 700;
+      margin: 10px 0;
+      &.score {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(209, 3, 3);
+        color: #fff;
+        border-radius: 100%;
+        overflow: hidden;
+        @include longShadow(darken(rgb(209, 3, 3), 10), 50);
+        font-weight: 700;
+      }
     }
   }
 }

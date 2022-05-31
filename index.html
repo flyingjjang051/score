@@ -32,9 +32,9 @@
       const calc = document.querySelector(".scoreCalculator .calc");
       const result = document.querySelector(".scoreCalculator .result");
       calc.addEventListener("click", function () {
-        const korNum = parseInt(kor.value);
-        const engNum = parseInt(eng.value);
-        const mathNum = parseInt(math.value);
+        const korNum = isNaN(parseInt(kor.value)) ? 0 : parseInt(kor.value);
+        const engNum = isNaN(parseInt(eng.value)) ? 0 : parseInt(eng.value);
+        const mathNum = isNaN(parseInt(math.value)) ? 0 : parseInt(math.value);
         const total = korNum + engNum + mathNum;
         const avg = total / 3;
         let txtScore = "";
@@ -49,7 +49,7 @@
         } else {
           txtScore = "F";
         }
-        result.innerHTML = `<p>총점 : ${total}</p><p>평균 : ${avg}</p><p class="score">${txtScore}</p>`;
+        result.innerHTML = `<p>총점 : ${total}</p><p>평균 : ${avg.toFixed(2)}</p><p class="score">${txtScore}</p>`;
       });
     </script>
     `
